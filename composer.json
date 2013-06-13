@@ -1,0 +1,25 @@
+{
+    "name": "juit/juit-aqbanking-wrapper",
+    "type": "library",
+    "description": "Wrapper to use AqBanking CLI from PHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jan Unger",
+            "email": "ju@juit.de",
+            "homepage": "http://juit.de",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
