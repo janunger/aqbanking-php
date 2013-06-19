@@ -3,6 +3,7 @@
 namespace AqBanking\Command;
 
 use AqBanking\Account;
+use AqBanking\ContextFile;
 
 class RequestCommand
 {

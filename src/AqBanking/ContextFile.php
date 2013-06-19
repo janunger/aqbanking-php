@@ -1,6 +1,6 @@
 <?php
 
-namespace AqBanking\Command;
+namespace AqBanking;
 
 class ContextFile
 {

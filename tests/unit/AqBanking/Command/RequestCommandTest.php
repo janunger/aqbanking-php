@@ -4,6 +4,7 @@ namespace AqBanking\Command;
 
 use AqBanking\Account;
 use AqBanking\Bank;
+use AqBanking\ContextFile;
 
 class RequestCommandTest extends \PHPUnit_Framework_TestCase
 {
