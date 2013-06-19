@@ -5,7 +5,7 @@ namespace AqBanking\Command;
 use AqBanking\Account;
 use AqBanking\ContextFile;
 
-class RequestCommand
+class RequestCommand extends AbstractCommand
 {
     /**
      * @var Account
@@ -21,11 +21,6 @@ class RequestCommand
      * @var string
      */
     private $pathToPinList;
-
-    /**
-     * @var null|ShellCommandExecutor
-     */
-    private $shellCommandExecutor = null;
 
     /**
      * @param Account $account
@@ -74,22 +69,5 @@ class RequestCommand
         }
 
         return $shellCommand;
-    }
-    
-    public function setShellCommandExecutor(ShellCommandExecutor $shellCommandExecutor)
-    {
-        $this->shellCommandExecutor = $shellCommandExecutor;
-    }
-
-    /**
-     * @return ShellCommandExecutor
-     */
-    private function getShellCommandExecutor()
-    {
-        if (null === $this->shellCommandExecutor) {
-            $this->shellCommandExecutor = new ShellCommandExecutor();
-        }
-
-        return $this->shellCommandExecutor;
     }
 }
