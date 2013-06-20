@@ -14,12 +14,12 @@ class ShellCommandExecutor
 
         exec($shellCommand . ' 2>' . $tempFile, $output, $returnVar);
 
-        $errors = file($tempFile);
-        $errors = array_map(function ($line) {
+        $errorOutput = file($tempFile);
+        $errorOutput = array_map(function ($line) {
             return rtrim($line, "\r\n");
-        }, $errors);
+        }, $errorOutput);
         unlink($tempFile);
 
-        return new Result($output, $errors, $returnVar);
+        return new Result($output, $errorOutput, $returnVar);
     }
 }
