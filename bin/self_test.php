@@ -10,10 +10,9 @@ try {
     echo 'ERROR: AqBanking did not respond.' . PHP_EOL;
     exit(1);
 } catch (AqBanking\Command\CheckAqBankingCommand\AqBankingVersionTooOldException $e) {
-    echo 'ERROR: AqBanking responded, but seems to be too old. '
-        . $e->getMessage()
-        . PHP_EOL;
+    echo 'ERROR: AqBanking version is too old:' . PHP_EOL
+        . $e->getMessage() . PHP_EOL;
     exit(1);
 }
 
-echo 'AqBanking responded and is of the required version or higher. Everything seems to be fine.' . PHP_EOL;
+echo 'AqBanking responded and meets the requirements.' . PHP_EOL;

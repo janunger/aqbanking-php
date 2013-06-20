@@ -25,17 +25,19 @@ class CheckAqBankingCommand extends AbstractCommand
 
     private function assertAqBankingIsAppropriateVersion()
     {
+        $minVersion = '5.0.24';
         $shellCommand = 'aqbanking-config --vstring';
         $result = $this->getShellCommandExecutor()->execute($shellCommand);
 
         if (0 !== $result->getReturnVar()) {
-            throw new AqBankingVersionTooOldException();
+            throw new AqBankingVersionTooOldException(
+                'Required version: ' . $minVersion . ' - present version: unknown');
         }
 
         $versionString = $result->getOutput()[0];
-        $minVersion = '5.0.24';
         if (version_compare($versionString, $minVersion) < 0) {
-            throw new AqBankingVersionTooOldException();
+            throw new AqBankingVersionTooOldException(
+                'Required version: ' . $minVersion . ' - present version: ' . $versionString);
         }
     }
 }
