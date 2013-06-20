@@ -10,4 +10,9 @@
         syntaxCheck                 = "false"
         verbose                     = "true"
         bootstrap                   = "bootstrap.php" >
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../src</directory>
+        </whitelist>
+    </filter>
 </phpunit>
