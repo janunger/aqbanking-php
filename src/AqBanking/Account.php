@@ -16,7 +16,8 @@ class Account
 
     /**
      * @param Bank $bank
-     * @param string $accountNumber
+     * @param $accountNumber
+     * @return \AqBanking\Account
      */
     public function __construct(Bank $bank, $accountNumber)
     {
