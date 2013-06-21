@@ -6,6 +6,11 @@ use AqBanking\ContextFile;
 
 class RenderContextFileToXMLCommand extends AbstractCommand
 {
+    /**
+     * @param ContextFile $contextFile
+     * @return string
+     * @throws \RuntimeException
+     */
     public function execute(ContextFile $contextFile)
     {
         $shellCommand =
