@@ -15,14 +15,21 @@ class Account
     private $accountNumber;
 
     /**
+     * @var string
+     */
+    private $accountHolderName;
+
+    /**
      * @param string $bankCode
-     * @param $accountNumber
+     * @param string $accountNumber
+     * @param string $accountHolderName
      * @return \AqBanking\Account
      */
-    public function __construct($bankCode, $accountNumber)
+    public function __construct($bankCode, $accountNumber, $accountHolderName = '')
     {
         $this->bankCode = $bankCode;
         $this->accountNumber = $accountNumber;
+        $this->accountHolderName = $accountHolderName;
     }
 
     /**

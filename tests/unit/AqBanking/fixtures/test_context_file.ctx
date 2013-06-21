@@ -1,0 +1,432 @@
+accountInfoList {
+  accountInfo {
+    char bankCode="50951469"
+    char bankName="Sparkasse Starkenburg"
+    char accountNumber="12112345"
+    char accountName="Sichteinlagen"
+    char owner="Mustermann"
+    char currency="EUR"
+    int  accountType="0"
+    int  accountId="1"
+
+    statusList {
+      status {
+        int  time="1370606400"
+
+        notedBalance {
+          value {
+            char value="228047%2F100"
+            char currency="EUR"
+          } #value
+
+          int  time="1370606400"
+        } #notedBalance
+      } #status
+
+      status {
+        int  time="1370875554"
+
+        bankLine {
+          char value="0"
+          char currency="EUR"
+        } #bankLine
+
+        bookedBalance {
+          value {
+            char value="228047%2F100"
+            char currency="EUR"
+          } #value
+
+          int  time="1370875554"
+        } #bookedBalance
+
+        notedBalance {
+          value {
+            char value="0"
+            char currency="EUR"
+          } #value
+
+          int  time="1370875554"
+        } #notedBalance
+      } #status
+    } #statusList
+
+    transactionList {
+      transaction {
+        char localBankCode="50951469"
+        char localAccountNumber="12112345"
+        char localName="Mustermann"
+        char remoteBankCode="MALADE51KOB"
+        char remoteAccountNumber="DE62570501200000012345"
+        char remoteName="Sehr sehr langer Kontoinhab", "ername"
+        int  uniqueId="0"
+        int  idForApplication="0"
+        int  groupId="0"
+
+        valutaDate {
+          date {
+            int  day="3"
+            int  month="6"
+            int  year="2013"
+          } #date
+
+          int  inUtc="1"
+
+          time {
+            int  hour="12"
+            int  min="0"
+            int  sec="0"
+          } #time
+        } #valutaDate
+
+        date {
+          date {
+            int  day="3"
+            int  month="6"
+            int  year="2013"
+          } #date
+
+          int  inUtc="1"
+
+          time {
+            int  hour="12"
+            int  min="0"
+            int  sec="0"
+          } #time
+        } #date
+
+        value {
+          char value="157740%2F100"
+          char currency="EUR"
+        } #value
+
+        int  textKey="0"
+        int  textKeyExt="0"
+        char transactionKey="062"
+        char endToEndReference="5828201"
+        int  transactionCode="166"
+        char transactionText="GUTSCHRIFT"
+        char primanota="9223"
+        char purpose="5828201 01.06.2013"
+        char period="unknown"
+        int  cycle="0"
+        int  executionDay="0"
+        char type="unknown"
+        char subType="unknown"
+        char status="unknown"
+        char charge="unknown"
+      } #transaction
+
+      transaction {
+        char localBankCode="50951469"
+        char localAccountNumber="12112345"
+        char localName="Mustermann"
+        char remoteBankCode="50010060"
+        char remoteAccountNumber="12777914"
+        char remoteName="Energieversorger XY"
+        int  uniqueId="0"
+        int  idForApplication="0"
+        int  groupId="0"
+
+        valutaDate {
+          date {
+            int  day="4"
+            int  month="6"
+            int  year="2013"
+          } #date
+
+          int  inUtc="1"
+
+          time {
+            int  hour="12"
+            int  min="0"
+            int  sec="0"
+          } #time
+        } #valutaDate
+
+        date {
+          date {
+            int  day="4"
+            int  month="6"
+            int  year="2013"
+          } #date
+
+          int  inUtc="1"
+
+          time {
+            int  hour="12"
+            int  min="0"
+            int  sec="0"
+          } #time
+        } #date
+
+        value {
+          char value="-8800%2F100"
+          char currency="EUR"
+        } #value
+
+        int  textKey="0"
+        int  textKeyExt="0"
+        char transactionKey="011"
+        int  transactionCode="5"
+        char transactionText="LASTSCHRIFT"
+        char primanota="9250"
+        char purpose="KNR. 9540395 88.00%2FABSCHLAG", "VOM 03.06.2013 570125%2FMUST", "ERSTR. 1, 12345 MUSTERSTADT"
+        char period="unknown"
+        int  cycle="0"
+        int  executionDay="0"
+        char type="unknown"
+        char subType="unknown"
+        char status="unknown"
+        char charge="unknown"
+      } #transaction
+
+      transaction {
+        char localBankCode="50951469"
+        char localAccountNumber="12112345"
+        char localName="Mustermann"
+        char remoteBankCode="50961592"
+        char remoteAccountNumber="2531234"
+        char remoteName="VEREIN XY"
+        int  uniqueId="0"
+        int  idForApplication="0"
+        int  groupId="0"
+
+        valutaDate {
+          date {
+            int  day="5"
+            int  month="6"
+            int  year="2013"
+          } #date
+
+          int  inUtc="1"
+
+          time {
+            int  hour="12"
+            int  min="0"
+            int  sec="0"
+          } #time
+        } #valutaDate
+
+        date {
+          date {
+            int  day="5"
+            int  month="6"
+            int  year="2013"
+          } #date
+
+          int  inUtc="1"
+
+          time {
+            int  hour="12"
+            int  min="0"
+            int  sec="0"
+          } #time
+        } #date
+
+        value {
+          char value="-3800%2F100"
+          char currency="EUR"
+        } #value
+
+        int  textKey="0"
+        int  textKeyExt="0"
+        char transactionKey="011"
+        char bankReference="600406130814"
+        int  transactionCode="5"
+        char transactionText="LASTSCHRIFT"
+        char primanota="9250"
+        char purpose="MITGLIEDSBEITRAG 2013"
+        char period="unknown"
+        int  cycle="0"
+        int  executionDay="0"
+        char type="unknown"
+        char subType="unknown"
+        char status="unknown"
+        char charge="unknown"
+      } #transaction
+
+      transaction {
+        char localBankCode="50951469"
+        char localAccountNumber="12112345"
+        char localName="Mustermann"
+        char remoteBankCode="50070010"
+        char remoteAccountNumber="175123456"
+        char remoteName="PAYPAL"
+        int  uniqueId="0"
+        int  idForApplication="0"
+        int  groupId="0"
+
+        valutaDate {
+          date {
+            int  day="7"
+            int  month="6"
+            int  year="2013"
+          } #date
+
+          int  inUtc="1"
+
+          time {
+            int  hour="12"
+            int  min="0"
+            int  sec="0"
+          } #time
+        } #valutaDate
+
+        date {
+          date {
+            int  day="7"
+            int  month="6"
+            int  year="2013"
+          } #date
+
+          int  inUtc="1"
+
+          time {
+            int  hour="12"
+            int  min="0"
+            int  sec="0"
+          } #time
+        } #date
+
+        value {
+          char value="-3180%2F100"
+          char currency="EUR"
+        } #value
+
+        int  textKey="0"
+        int  textKeyExt="0"
+        char transactionKey="011"
+        char bankReference="800000009046"
+        int  transactionCode="5"
+        char transactionText="LASTSCHRIFT"
+        char primanota="9250"
+        char purpose="MHXA2O4A9O3HJ3PA PP*2240*PP", "* VERKAEUFER X, IHR EINKAU", "F BEI VERKAEUFER X, ARTIKEL", "-125116343137", "123456P3TX1234DT"
+        char period="unknown"
+        int  cycle="0"
+        int  executionDay="0"
+        char type="unknown"
+        char subType="unknown"
+        char status="unknown"
+        char charge="unknown"
+      } #transaction
+    } #transactionList
+
+    standingOrderList {
+      standingOrder {
+        char localCountry="DE"
+        char localBankCode="50951469"
+        char localAccountNumber="12112345"
+        char localName="Mustermann"
+        char remoteCountry="DE"
+        char remoteBankCode="50951469"
+        char remoteAccountNumber="12012345"
+        char remoteName="VERMIETER XY"
+        int  uniqueId="0"
+        int  idForApplication="0"
+        int  groupId="0"
+
+        value {
+          char value="700"
+          char currency="EUR"
+        } #value
+
+        int  textKey="52"
+        int  textKeyExt="0"
+        int  transactionCode="0"
+        char fiId="299476"
+        char purpose="MIETE %2B NK-VORAUSZAHLUNG", "MUSTERMANN"
+        char period="monthly"
+        int  cycle="1"
+        int  executionDay="1"
+
+        firstExecutionDate {
+          date {
+            int  day="1"
+            int  month="7"
+            int  year="2013"
+          } #date
+
+          int  inUtc="1"
+
+          time {
+            int  hour="12"
+            int  min="0"
+            int  sec="0"
+          } #time
+        } #firstExecutionDate
+
+        nextExecutionDate {
+          date {
+            int  day="1"
+            int  month="7"
+            int  year="2013"
+          } #date
+
+          int  inUtc="1"
+
+          time {
+            int  hour="12"
+            int  min="0"
+            int  sec="0"
+          } #time
+        } #nextExecutionDate
+
+        char type="unknown"
+        char subType="unknown"
+        char status="unknown"
+        char charge="unknown"
+      } #standingOrder
+    } #standingOrderList
+
+    datedTransferList {
+      datedTransfer {
+        char localCountry="DE"
+        char localBankCode="50951469"
+        char localAccountNumber="12112345"
+        char localName="Mustermann"
+        char remoteCountry="DE"
+        char remoteBankCode="50951469"
+        char remoteAccountNumber="12012345"
+        char remoteName="GLAEUBIGER XY"
+        int  uniqueId="0"
+        int  idForApplication="0"
+        int  groupId="0"
+
+        date {
+          date {
+            int  day="11"
+            int  month="6"
+            int  year="2013"
+          } #date
+
+          int  inUtc="1"
+
+          time {
+            int  hour="12"
+            int  min="0"
+            int  sec="0"
+          } #time
+        } #date
+
+        value {
+          char value="500"
+          char currency="EUR"
+        } #value
+
+        int  textKey="51"
+        int  textKeyExt="0"
+        int  transactionCode="0"
+        char fiId="29660610161817590093"
+        char purpose="BEKANNT"
+        char period="unknown"
+        int  cycle="0"
+        int  executionDay="0"
+        char type="unknown"
+        char subType="unknown"
+        char status="unknown"
+        char charge="unknown"
+      } #datedTransfer
+    } #datedTransferList
+  } #accountInfo
+} #accountInfoList

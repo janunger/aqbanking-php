@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ImExporterContext type="group">
+  <accountInfoList type="group">
+    <accountInfo type="group">
+      <bankCode type="var">
+        <value type="char">
+          50951469
+        </value>
+      </bankCode>
+      <bankName type="var">
+        <value type="char">
+          Sparkasse Starkenburg
+        </value>
+      </bankName>
+      <accountNumber type="var">
+        <value type="char">
+          12112345
+        </value>
+      </accountNumber>
+      <owner type="var">
+        <value type="char">
+          Mustermann
+        </value>
+      </owner>
+      <currency type="var">
+        <value type="char">
+          EUR
+        </value>
+      </currency>
+      <accountType type="var">
+        <value type="int">
+          0
+        </value>
+      </accountType>
+      <accountId type="var">
+        <value type="int">
+          1
+        </value>
+      </accountId>
+      <statusList type="group">
+        <status type="group">
+          <time type="var">
+            <value type="int">
+              1370606400
+            </value>
+          </time>
+          <notedBalance type="group">
+            <time type="var">
+              <value type="int">
+                1370606400
+              </value>
+            </time>
+            <value type="group">
+              <value type="var">
+                <value type="char">
+                  228047/100
+                </value>
+              </value>
+              <currency type="var">
+                <value type="char">
+                  EUR
+                </value>
+              </currency>
+            </value>
+          </notedBalance>
+        </status>
+        <status type="group">
+          <time type="var">
+            <value type="int">
+              1370875554
+            </value>
+          </time>
+          <bankLine type="group">
+            <value type="var">
+              <value type="char">
+                0
+              </value>
+            </value>
+            <currency type="var">
+              <value type="char">
+                EUR
+              </value>
+            </currency>
+          </bankLine>
+          <bookedBalance type="group">
+            <time type="var">
+              <value type="int">
+                1370875554
+              </value>
+            </time>
+            <value type="group">
+              <value type="var">
+                <value type="char">
+                  228047/100
+                </value>
+              </value>
+              <currency type="var">
+                <value type="char">
+                  EUR
+                </value>
+              </currency>
+            </value>
+          </bookedBalance>
+          <notedBalance type="group">
+            <time type="var">
+              <value type="int">
+                1370875554
+              </value>
+            </time>
+            <value type="group">
+              <value type="var">
+                <value type="char">
+                  0
+                </value>
+              </value>
+              <currency type="var">
+                <value type="char">
+                  EUR
+                </value>
+              </currency>
+            </value>
+          </notedBalance>
+        </status>
+      </statusList>
+      <transactionList type="group">
+        <transaction type="group">
+          <localBankCode type="var">
+            <value type="char">
+              50951469
+            </value>
+          </localBankCode>
+          <localAccountNumber type="var">
+            <value type="char">
+              12112345
+            </value>
+          </localAccountNumber>
+          <localName type="var">
+            <value type="char">
+              Mustermann
+            </value>
+          </localName>
+          <remoteBankCode type="var">
+            <value type="char">
+              MALADE51KOB
+            </value>
+          </remoteBankCode>
+          <remoteAccountNumber type="var">
+            <value type="char">
+              DE62570501200000012345
+            </value>
+          </remoteAccountNumber>
+          <remoteName type="var">
+            <value type="char">
+              Sehr sehr langer Kontoinhab
+            </value>
+            <value type="char">
+              ername
+            </value>
+          </remoteName>
+          <uniqueId type="var">
+            <value type="int">
+              0
+            </value>
+          </uniqueId>
+          <idForApplication type="var">
+            <value type="int">
+              0
+            </value>
+          </idForApplication>
+          <groupId type="var">
+            <value type="int">
+              0
+            </value>
+          </groupId>
+          <textKey type="var">
+            <value type="int">
+              0
+            </value>
+          </textKey>
+          <textKeyExt type="var">
+            <value type="int">
+              0
+            </value>
+          </textKeyExt>
+          <transactionKey type="var">
+            <value type="char">
+              062
+            </value>
+          </transactionKey>
+          <endToEndReference type="var">
+            <value type="char">
+              5828201
+            </value>
+          </endToEndReference>
+          <transactionCode type="var">
+            <value type="int">
+              166
+            </value>
+          </transactionCode>
+          <transactionText type="var">
+            <value type="char">
+              GUTSCHRIFT
+            </value>
+          </transactionText>
+          <primanota type="var">
+            <value type="char">
+              9223
+            </value>
+          </primanota>
+          <purpose type="var">
+            <value type="char">
+              5828201 01.06.2013
+            </value>
+          </purpose>
+          <period type="var">
+            <value type="char">
+              unknown
+            </value>
+          </period>
+          <cycle type="var">
+            <value type="int">
+              0
+            </value>
+          </cycle>
+          <executionDay type="var">
+            <value type="int">
+              0
+            </value>
+          </executionDay>
+          <type type="var">
+            <value type="char">
+              unknown
+            </value>
+          </type>
+          <subType type="var">
+            <value type="char">
+              unknown
+            </value>
+          </subType>
+          <status type="var">
+            <value type="char">
+              unknown
+            </value>
+          </status>
+          <charge type="var">
+            <value type="char">
+              unknown
+            </value>
+          </charge>
+          <valutaDate type="group">
+            <inUtc type="var">
+              <value type="int">
+                1
+              </value>
+            </inUtc>
+            <date type="group">
+              <day type="var">
+                <value type="int">
+                  3
+                </value>
+              </day>
+              <month type="var">
+                <value type="int">
+                  6
+                </value>
+              </month>
+              <year type="var">
+                <value type="int">
+                  2013
+                </value>
+              </year>
+            </date>
+            <time type="group">
+              <hour type="var">
+                <value type="int">
+                  12
+                </value>
+              </hour>
+              <min type="var">
+                <value type="int">
+                  0
+                </value>
+              </min>
+              <sec type="var">
+                <value type="int">
+                  0
+                </value>
+              </sec>
+            </time>
+          </valutaDate>
+          <date type="group">
+            <inUtc type="var">
+              <value type="int">
+                1
+              </value>
+            </inUtc>
+            <date type="group">
+              <day type="var">
+                <value type="int">
+                  3
+                </value>
+              </day>
+              <month type="var">
+                <value type="int">
+                  6
+                </value>
+              </month>
+              <year type="var">
+                <value type="int">
+                  2013
+                </value>
+              </year>
+            </date>
+            <time type="group">
+              <hour type="var">
+                <value type="int">
+                  12
+                </value>
+              </hour>
+              <min type="var">
+                <value type="int">
+                  0
+                </value>
+              </min>
+              <sec type="var">
+                <value type="int">
+                  0
+                </value>
+              </sec>
+            </time>
+          </date>
+          <value type="group">
+            <value type="var">
+              <value type="char">
+                157740/100
+              </value>
+            </value>
+            <currency type="var">
+              <value type="char">
+                EUR
+              </value>
+            </currency>
+          </value>
+        </transaction>
+        <transaction type="group">
+          <localBankCode type="var">
+            <value type="char">
+              50951469
+            </value>
+          </localBankCode>
+          <localAccountNumber type="var">
+            <value type="char">
+              12112345
+            </value>
+          </localAccountNumber>
+          <localName type="var">
+            <value type="char">
+              Mustermann
+            </value>
+          </localName>
+          <remoteBankCode type="var">
+            <value type="char">
+              50010060
+            </value>
+          </remoteBankCode>
+          <remoteAccountNumber type="var">
+            <value type="char">
+              12777914
+            </value>
+          </remoteAccountNumber>
+          <remoteName type="var">
+            <value type="char">
+              Energieversorger XY
+            </value>
+          </remoteName>
+          <uniqueId type="var">
+            <value type="int">
+              0
+            </value>
+          </uniqueId>
+          <idForApplication type="var">
+            <value type="int">
+              0
+            </value>
+          </idForApplication>
+          <groupId type="var">
+            <value type="int">
+              0
+            </value>
+          </groupId>
+          <textKey type="var">
+            <value type="int">
+              0
+            </value>
+          </textKey>
+          <textKeyExt type="var">
+            <value type="int">
+              0
+            </value>
+          </textKeyExt>
+          <transactionKey type="var">
+            <value type="char">
+              011
+            </value>
+          </transactionKey>
+          <transactionCode type="var">
+            <value type="int">
+              5
+            </value>
+          </transactionCode>
+          <transactionText type="var">
+            <value type="char">
+              LASTSCHRIFT
+            </value>
+          </transactionText>
+          <primanota type="var">
+            <value type="char">
+              9250
+            </value>
+          </primanota>
+          <purpose type="var">
+            <value type="char">
+              KNR. 9540395 88.00/ABSCHLAG
+            </value>
+            <value type="char">
+              VOM 03.06.2013 570125/MUST
+            </value>
+            <value type="char">
+              ERSTR. 1, 12345 MUSTERSTADT
+            </value>
+          </purpose>
+          <period type="var">
+            <value type="char">
+              unknown
+            </value>
+          </period>
+          <cycle type="var">
+            <value type="int">
+              0
+            </value>
+          </cycle>
+          <executionDay type="var">
+            <value type="int">
+              0
+            </value>
+          </executionDay>
+          <type type="var">
+            <value type="char">
+              unknown
+            </value>
+          </type>
+          <subType type="var">
+            <value type="char">
+              unknown
+            </value>
+          </subType>
+          <status type="var">
+            <value type="char">
+              unknown
+            </value>
+          </status>
+          <charge type="var">
+            <value type="char">
+              unknown
+            </value>
+          </charge>
+          <valutaDate type="group">
+            <inUtc type="var">
+              <value type="int">
+                1
+              </value>
+            </inUtc>
+            <date type="group">
+              <day type="var">
+                <value type="int">
+                  4
+                </value>
+              </day>
+              <month type="var">
+                <value type="int">
+                  6
+                </value>
+              </month>
+              <year type="var">
+                <value type="int">
+                  2013
+                </value>
+              </year>
+            </date>
+            <time type="group">
+              <hour type="var">
+                <value type="int">
+                  12
+                </value>
+              </hour>
+              <min type="var">
+                <value type="int">
+                  0
+                </value>
+              </min>
+              <sec type="var">
+                <value type="int">
+                  0
+                </value>
+              </sec>
+            </time>
+          </valutaDate>
+          <date type="group">
+            <inUtc type="var">
+              <value type="int">
+                1
+              </value>
+            </inUtc>
+            <date type="group">
+              <day type="var">
+                <value type="int">
+                  4
+                </value>
+              </day>
+              <month type="var">
+                <value type="int">
+                  6
+                </value>
+              </month>
+              <year type="var">
+                <value type="int">
+                  2013
+                </value>
+              </year>
+            </date>
+            <time type="group">
+              <hour type="var">
+                <value type="int">
+                  12
+                </value>
+              </hour>
+              <min type="var">
+                <value type="int">
+                  0
+                </value>
+              </min>
+              <sec type="var">
+                <value type="int">
+                  0
+                </value>
+              </sec>
+            </time>
+          </date>
+          <value type="group">
+            <value type="var">
+              <value type="char">
+                -8800/100
+              </value>
+            </value>
+            <currency type="var">
+              <value type="char">
+                EUR
+              </value>
+            </currency>
+          </value>
+        </transaction>
+        <transaction type="group">
+          <localBankCode type="var">
+            <value type="char">
+              50951469
+            </value>
+          </localBankCode>
+          <localAccountNumber type="var">
+            <value type="char">
+              12112345
+            </value>
+          </localAccountNumber>
+          <localName type="var">
+            <value type="char">
+              Mustermann
+            </value>
+          </localName>
+          <remoteBankCode type="var">
+            <value type="char">
+              50961592
+            </value>
+          </remoteBankCode>
+          <remoteAccountNumber type="var">
+            <value type="char">
+              2531234
+            </value>
+          </remoteAccountNumber>
+          <remoteName type="var">
+            <value type="char">
+              VEREIN XY
+            </value>
+          </remoteName>
+          <uniqueId type="var">
+            <value type="int">
+              0
+            </value>
+          </uniqueId>
+          <idForApplication type="var">
+            <value type="int">
+              0
+            </value>
+          </idForApplication>
+          <groupId type="var">
+            <value type="int">
+              0
+            </value>
+          </groupId>
+          <textKey type="var">
+            <value type="int">
+              0
+            </value>
+          </textKey>
+          <textKeyExt type="var">
+            <value type="int">
+              0
+            </value>
+          </textKeyExt>
+          <transactionKey type="var">
+            <value type="char">
+              011
+            </value>
+          </transactionKey>
+          <bankReference type="var">
+            <value type="char">
+              600406130814
+            </value>
+          </bankReference>
+          <transactionCode type="var">
+            <value type="int">
+              5
+            </value>
+          </transactionCode>
+          <transactionText type="var">
+            <value type="char">
+              LASTSCHRIFT
+            </value>
+          </transactionText>
+          <primanota type="var">
+            <value type="char">
+              9250
+            </value>
+          </primanota>
+          <purpose type="var">
+            <value type="char">
+              MITGLIEDSBEITRAG 2013
+            </value>
+          </purpose>
+          <period type="var">
+            <value type="char">
+              unknown
+            </value>
+          </period>
+          <cycle type="var">
+            <value type="int">
+              0
+            </value>
+          </cycle>
+          <executionDay type="var">
+            <value type="int">
+              0
+            </value>
+          </executionDay>
+          <type type="var">
+            <value type="char">
+              unknown
+            </value>
+          </type>
+          <subType type="var">
+            <value type="char">
+              unknown
+            </value>
+          </subType>
+          <status type="var">
+            <value type="char">
+              unknown
+            </value>
+          </status>
+          <charge type="var">
+            <value type="char">
+              unknown
+            </value>
+          </charge>
+          <valutaDate type="group">
+            <inUtc type="var">
+              <value type="int">
+                1
+              </value>
+            </inUtc>
+            <date type="group">
+              <day type="var">
+                <value type="int">
+                  5
+                </value>
+              </day>
+              <month type="var">
+                <value type="int">
+                  6
+                </value>
+              </month>
+              <year type="var">
+                <value type="int">
+                  2013
+                </value>
+              </year>
+            </date>
+            <time type="group">
+              <hour type="var">
+                <value type="int">
+                  12
+                </value>
+              </hour>
+              <min type="var">
+                <value type="int">
+                  0
+                </value>
+              </min>
+              <sec type="var">
+                <value type="int">
+                  0
+                </value>
+              </sec>
+            </time>
+          </valutaDate>
+          <date type="group">
+            <inUtc type="var">
+              <value type="int">
+                1
+              </value>
+            </inUtc>
+            <date type="group">
+              <day type="var">
+                <value type="int">
+                  5
+                </value>
+              </day>
+              <month type="var">
+                <value type="int">
+                  6
+                </value>
+              </month>
+              <year type="var">
+                <value type="int">
+                  2013
+                </value>
+              </year>
+            </date>
+            <time type="group">
+              <hour type="var">
+                <value type="int">
+                  12
+                </value>
+              </hour>
+              <min type="var">
+                <value type="int">
+                  0
+                </value>
+              </min>
+              <sec type="var">
+                <value type="int">
+                  0
+                </value>
+              </sec>
+            </time>
+          </date>
+          <value type="group">
+            <value type="var">
+              <value type="char">
+                -3800/100
+              </value>
+            </value>
+            <currency type="var">
+              <value type="char">
+                EUR
+              </value>
+            </currency>
+          </value>
+        </transaction>
+        <transaction type="group">
+          <localBankCode type="var">
+            <value type="char">
+              50951469
+            </value>
+          </localBankCode>
+          <localAccountNumber type="var">
+            <value type="char">
+              12112345
+            </value>
+          </localAccountNumber>
+          <localName type="var">
+            <value type="char">
+              Mustermann
+            </value>
+          </localName>
+          <remoteBankCode type="var">
+            <value type="char">
+              50070010
+            </value>
+          </remoteBankCode>
+          <remoteAccountNumber type="var">
+            <value type="char">
+              175123456
+            </value>
+          </remoteAccountNumber>
+          <remoteName type="var">
+            <value type="char">
+              PAYPAL
+            </value>
+          </remoteName>
+          <uniqueId type="var">
+            <value type="int">
+              0
+            </value>
+          </uniqueId>
+          <idForApplication type="var">
+            <value type="int">
+              0
+            </value>
+          </idForApplication>
+          <groupId type="var">
+            <value type="int">
+              0
+            </value>
+          </groupId>
+          <textKey type="var">
+            <value type="int">
+              0
+            </value>
+          </textKey>
+          <textKeyExt type="var">
+            <value type="int">
+              0
+            </value>
+          </textKeyExt>
+          <transactionKey type="var">
+            <value type="char">
+              011
+            </value>
+          </transactionKey>
+          <bankReference type="var">
+            <value type="char">
+              800000009046
+            </value>
+          </bankReference>
+          <transactionCode type="var">
+            <value type="int">
+              5
+            </value>
+          </transactionCode>
+          <transactionText type="var">
+            <value type="char">
+              LASTSCHRIFT
+            </value>
+          </transactionText>
+          <primanota type="var">
+            <value type="char">
+              9250
+            </value>
+          </primanota>
+          <purpose type="var">
+            <value type="char">
+              MHXA2O4A9O3HJ3PA PP*2240*PP
+            </value>
+            <value type="char">
+              * VERKAEUFER X, IHR EINKAU
+            </value>
+            <value type="char">
+              F BEI VERKAEUFER X, ARTIKEL
+            </value>
+            <value type="char">
+              -125116343137
+            </value>
+            <value type="char">
+              123456P3TX1234DT
+            </value>
+          </purpose>
+          <period type="var">
+            <value type="char">
+              unknown
+            </value>
+          </period>
+          <cycle type="var">
+            <value type="int">
+              0
+            </value>
+          </cycle>
+          <executionDay type="var">
+            <value type="int">
+              0
+            </value>
+          </executionDay>
+          <type type="var">
+            <value type="char">
+              unknown
+            </value>
+          </type>
+          <subType type="var">
+            <value type="char">
+              unknown
+            </value>
+          </subType>
+          <status type="var">
+            <value type="char">
+              unknown
+            </value>
+          </status>
+          <charge type="var">
+            <value type="char">
+              unknown
+            </value>
+          </charge>
+          <valutaDate type="group">
+            <inUtc type="var">
+              <value type="int">
+                1
+              </value>
+            </inUtc>
+            <date type="group">
+              <day type="var">
+                <value type="int">
+                  7
+                </value>
+              </day>
+              <month type="var">
+                <value type="int">
+                  6
+                </value>
+              </month>
+              <year type="var">
+                <value type="int">
+                  2013
+                </value>
+              </year>
+            </date>
+            <time type="group">
+              <hour type="var">
+                <value type="int">
+                  12
+                </value>
+              </hour>
+              <min type="var">
+                <value type="int">
+                  0
+                </value>
+              </min>
+              <sec type="var">
+                <value type="int">
+                  0
+                </value>
+              </sec>
+            </time>
+          </valutaDate>
+          <date type="group">
+            <inUtc type="var">
+              <value type="int">
+                1
+              </value>
+            </inUtc>
+            <date type="group">
+              <day type="var">
+                <value type="int">
+                  7
+                </value>
+              </day>
+              <month type="var">
+                <value type="int">
+                  6
+                </value>
+              </month>
+              <year type="var">
+                <value type="int">
+                  2013
+                </value>
+              </year>
+            </date>
+            <time type="group">
+              <hour type="var">
+                <value type="int">
+                  12
+                </value>
+              </hour>
+              <min type="var">
+                <value type="int">
+                  0
+                </value>
+              </min>
+              <sec type="var">
+                <value type="int">
+                  0
+                </value>
+              </sec>
+            </time>
+          </date>
+          <value type="group">
+            <value type="var">
+              <value type="char">
+                -3180/100
+              </value>
+            </value>
+            <currency type="var">
+              <value type="char">
+                EUR
+              </value>
+            </currency>
+          </value>
+        </transaction>
+      </transactionList>
+      <standingOrderList type="group">
+        <standingOrder type="group">
+          <localCountry type="var">
+            <value type="char">
+              DE
+            </value>
+          </localCountry>
+          <localBankCode type="var">
+            <value type="char">
+              50951469
+            </value>
+          </localBankCode>
+          <localAccountNumber type="var">
+            <value type="char">
+              12112345
+            </value>
+          </localAccountNumber>
+          <localName type="var">
+            <value type="char">
+              Mustermann
+            </value>
+          </localName>
+          <remoteCountry type="var">
+            <value type="char">
+              DE
+            </value>
+          </remoteCountry>
+          <remoteBankCode type="var">
+            <value type="char">
+              50951469
+            </value>
+          </remoteBankCode>
+          <remoteAccountNumber type="var">
+            <value type="char">
+              12012345
+            </value>
+          </remoteAccountNumber>
+          <remoteName type="var">
+            <value type="char">
+              VERMIETER XY
+            </value>
+          </remoteName>
+          <uniqueId type="var">
+            <value type="int">
+              0
+            </value>
+          </uniqueId>
+          <idForApplication type="var">
+            <value type="int">
+              0
+            </value>
+          </idForApplication>
+          <groupId type="var">
+            <value type="int">
+              0
+            </value>
+          </groupId>
+          <textKey type="var">
+            <value type="int">
+              52
+            </value>
+          </textKey>
+          <textKeyExt type="var">
+            <value type="int">
+              0
+            </value>
+          </textKeyExt>
+          <transactionCode type="var">
+            <value type="int">
+              0
+            </value>
+          </transactionCode>
+          <fiId type="var">
+            <value type="char">
+              299476
+            </value>
+          </fiId>
+          <purpose type="var">
+            <value type="char">
+              MIETE + NK-VORAUSZAHLUNG
+            </value>
+            <value type="char">
+              MUSTERMANN
+            </value>
+          </purpose>
+          <period type="var">
+            <value type="char">
+              monthly
+            </value>
+          </period>
+          <cycle type="var">
+            <value type="int">
+              1
+            </value>
+          </cycle>
+          <executionDay type="var">
+            <value type="int">
+              1
+            </value>
+          </executionDay>
+          <type type="var">
+            <value type="char">
+              unknown
+            </value>
+          </type>
+          <subType type="var">
+            <value type="char">
+              unknown
+            </value>
+          </subType>
+          <status type="var">
+            <value type="char">
+              unknown
+            </value>
+          </status>
+          <charge type="var">
+            <value type="char">
+              unknown
+            </value>
+          </charge>
+          <value type="group">
+            <value type="var">
+              <value type="char">
+                700
+              </value>
+            </value>
+            <currency type="var">
+              <value type="char">
+                EUR
+              </value>
+            </currency>
+          </value>
+          <firstExecutionDate type="group">
+            <inUtc type="var">
+              <value type="int">
+                1
+              </value>
+            </inUtc>
+            <date type="group">
+              <day type="var">
+                <value type="int">
+                  1
+                </value>
+              </day>
+              <month type="var">
+                <value type="int">
+                  7
+                </value>
+              </month>
+              <year type="var">
+                <value type="int">
+                  2013
+                </value>
+              </year>
+            </date>
+            <time type="group">
+              <hour type="var">
+                <value type="int">
+                  12
+                </value>
+              </hour>
+              <min type="var">
+                <value type="int">
+                  0
+                </value>
+              </min>
+              <sec type="var">
+                <value type="int">
+                  0
+                </value>
+              </sec>
+            </time>
+          </firstExecutionDate>
+          <nextExecutionDate type="group">
+            <inUtc type="var">
+              <value type="int">
+                1
+              </value>
+            </inUtc>
+            <date type="group">
+              <day type="var">
+                <value type="int">
+                  1
+                </value>
+              </day>
+              <month type="var">
+                <value type="int">
+                  7
+                </value>
+              </month>
+              <year type="var">
+                <value type="int">
+                  2013
+                </value>
+              </year>
+            </date>
+            <time type="group">
+              <hour type="var">
+                <value type="int">
+                  12
+                </value>
+              </hour>
+              <min type="var">
+                <value type="int">
+                  0
+                </value>
+              </min>
+              <sec type="var">
+                <value type="int">
+                  0
+                </value>
+              </sec>
+            </time>
+          </nextExecutionDate>
+        </standingOrder>
+      </standingOrderList>
+      <datedTransferList type="group">
+        <datedTransfer type="group">
+          <localCountry type="var">
+            <value type="char">
+              DE
+            </value>
+          </localCountry>
+          <localBankCode type="var">
+            <value type="char">
+              50951469
+            </value>
+          </localBankCode>
+          <localAccountNumber type="var">
+            <value type="char">
+              12112345
+            </value>
+          </localAccountNumber>
+          <localName type="var">
+            <value type="char">
+              Mustermann
+            </value>
+          </localName>
+          <remoteCountry type="var">
+            <value type="char">
+              DE
+            </value>
+          </remoteCountry>
+          <remoteBankCode type="var">
+            <value type="char">
+              50951469
+            </value>
+          </remoteBankCode>
+          <remoteAccountNumber type="var">
+            <value type="char">
+              12012345
+            </value>
+          </remoteAccountNumber>
+          <remoteName type="var">
+            <value type="char">
+              GLAEUBIGER XY
+            </value>
+          </remoteName>
+          <uniqueId type="var">
+            <value type="int">
+              0
+            </value>
+          </uniqueId>
+          <idForApplication type="var">
+            <value type="int">
+              0
+            </value>
+          </idForApplication>
+          <groupId type="var">
+            <value type="int">
+              0
+            </value>
+          </groupId>
+          <textKey type="var">
+            <value type="int">
+              51
+            </value>
+          </textKey>
+          <textKeyExt type="var">
+            <value type="int">
+              0
+            </value>
+          </textKeyExt>
+          <transactionCode type="var">
+            <value type="int">
+              0
+            </value>
+          </transactionCode>
+          <fiId type="var">
+            <value type="char">
+              29660610161817590093
+            </value>
+          </fiId>
+          <purpose type="var">
+            <value type="char">
+              BEKANNT
+            </value>
+          </purpose>
+          <period type="var">
+            <value type="char">
+              unknown
+            </value>
+          </period>
+          <cycle type="var">
+            <value type="int">
+              0
+            </value>
+          </cycle>
+          <executionDay type="var">
+            <value type="int">
+              0
+            </value>
+          </executionDay>
+          <type type="var">
+            <value type="char">
+              unknown
+            </value>
+          </type>
+          <subType type="var">
+            <value type="char">
+              unknown
+            </value>
+          </subType>
+          <status type="var">
+            <value type="char">
+              unknown
+            </value>
+          </status>
+          <charge type="var">
+            <value type="char">
+              unknown
+            </value>
+          </charge>
+          <date type="group">
+            <inUtc type="var">
+              <value type="int">
+                1
+              </value>
+            </inUtc>
+            <date type="group">
+              <day type="var">
+                <value type="int">
+                  11
+                </value>
+              </day>
+              <month type="var">
+                <value type="int">
+                  6
+                </value>
+              </month>
+              <year type="var">
+                <value type="int">
+                  2013
+                </value>
+              </year>
+            </date>
+            <time type="group">
+              <hour type="var">
+                <value type="int">
+                  12
+                </value>
+              </hour>
+              <min type="var">
+                <value type="int">
+                  0
+                </value>
+              </min>
+              <sec type="var">
+                <value type="int">
+                  0
+                </value>
+              </sec>
+            </time>
+          </date>
+          <value type="group">
+            <value type="var">
+              <value type="char">
+                500
+              </value>
+            </value>
+            <currency type="var">
+              <value type="char">
+                EUR
+              </value>
+            </currency>
+          </value>
+        </datedTransfer>
+      </datedTransferList>
+    </accountInfo>
+  </accountInfoList>
+</ImExporterContext>
