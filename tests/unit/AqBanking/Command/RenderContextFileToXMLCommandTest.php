@@ -17,18 +17,27 @@ class RenderContextFileToXMLCommandTest extends \PHPUnit_Framework_TestCase
             . ' listtrans'
             . ' --ctxfile=' . $contextFile->getPath()
             . ' --exporter=xmldb';
+        $output = array(
+            '<?xml version="1.0" encoding="utf-8"?>',
+            '<ImExporterContext type="group">',
+            '</ImExporterContext>'
+        );
         $shellCommandExecutorMock
             ->shouldReceive('execute')->once()
             ->with($expectedCommand)
-            ->andReturn(new Result(array(), array(), 0));
+            ->andReturn(new Result($output, array(), 0));
+
+        $expectedXmlString = implode(PHP_EOL, $output);
+
 
         $sut = new RenderContextFileToXMLCommand();
         $sut->setShellCommandExecutor($shellCommandExecutorMock);
 
-        $sut->execute($contextFile);
+        $result = $sut->execute($contextFile);
 
-        // To satisfy PHPUnit's "strict" mode - if Mockery didn't throw an exception until here, everything is fine
-        $this->assertTrue(true);
+
+        $this->assertInstanceOf('DOMDocument', $result);
+        $this->assertXmlStringEqualsXmlString($expectedXmlString, $result->saveXML());
     }
 
     /**

@@ -8,7 +8,7 @@ class RenderContextFileToXMLCommand extends AbstractCommand
 {
     /**
      * @param ContextFile $contextFile
-     * @return string
+     * @return \DOMDocument
      * @throws \RuntimeException
      */
     public function execute(ContextFile $contextFile)
@@ -28,6 +28,9 @@ class RenderContextFileToXMLCommand extends AbstractCommand
             );
         }
 
-        return implode(PHP_EOL, $result->getOutput());
+        $domDocument = new \DOMDocument();
+        $domDocument->loadXML(implode(PHP_EOL, $result->getOutput()));
+
+        return $domDocument;
     }
 }
