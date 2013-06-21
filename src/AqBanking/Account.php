@@ -5,9 +5,9 @@ namespace AqBanking;
 class Account
 {
     /**
-     * @var Bank
+     * @var string
      */
-    private $bank;
+    private $bankCode;
 
     /**
      * @var string
@@ -15,13 +15,13 @@ class Account
     private $accountNumber;
 
     /**
-     * @param Bank $bank
+     * @param string $bankCode
      * @param $accountNumber
      * @return \AqBanking\Account
      */
-    public function __construct(Bank $bank, $accountNumber)
+    public function __construct($bankCode, $accountNumber)
     {
-        $this->bank = $bank;
+        $this->bankCode = $bankCode;
         $this->accountNumber = $accountNumber;
     }
 
@@ -30,7 +30,7 @@ class Account
      */
     public function getBankCode()
     {
-        return $this->bank->getBankCode();
+        return $this->bankCode;
     }
 
     /**

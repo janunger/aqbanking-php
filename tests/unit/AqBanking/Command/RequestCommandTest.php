@@ -3,7 +3,6 @@
 namespace AqBanking\Command;
 
 use AqBanking\Account;
-use AqBanking\Bank;
 use AqBanking\ContextFile;
 
 class RequestCommandTest extends \PHPUnit_Framework_TestCase
@@ -17,7 +16,7 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
     {
         $accountNumber = '12345678';
         $bankCode = '23456789';
-        $account = new Account(new Bank($bankCode), $accountNumber);
+        $account = new Account($bankCode, $accountNumber);
 
         $pathToContextFile = '/path/to/context_file';
         $contextFile = new ContextFile($pathToContextFile);
@@ -38,12 +37,11 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
             . " --transactions"
             . " --balance"
             . " --sto"
-            . " --dated"
-        ;
+            . " --dated";
         $shellCommandExecutorMock
             ->shouldReceive('execute')->once()
             ->with($expectedCommand);
-            //->andReturn(new Result(array(), 0));
+        //->andReturn(new Result(array(), 0));
 
         $sut = new RequestCommand($account, $contextFile, $pathToPinList);
         $sut->setShellCommandExecutor($shellCommandExecutorMock);
@@ -57,7 +55,7 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
     {
         $accountNumber = '12345678';
         $bankCode = '23456789';
-        $account = new Account(new Bank($bankCode), $accountNumber);
+        $account = new Account($bankCode, $accountNumber);
 
         $pathToContextFile = '/path/to/context_file';
         $contextFile = new ContextFile($pathToContextFile);
@@ -81,12 +79,11 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
             . " --balance"
             . " --sto"
             . " --dated"
-            . " --fromdate=" . $fromDate->format('Ymd')
-        ;
+            . " --fromdate=" . $fromDate->format('Ymd');
         $shellCommandExecutorMock
             ->shouldReceive('execute')->once()
             ->with($expectedCommand);
-            //->andReturn(new Result(array(), 0));
+        //->andReturn(new Result(array(), 0));
 
         $sut = new RequestCommand($account, $contextFile, $pathToPinList);
         $sut->setShellCommandExecutor($shellCommandExecutorMock);
