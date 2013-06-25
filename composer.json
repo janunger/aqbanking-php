@@ -1,8 +1,8 @@
 {
-    "name": "juit/juit-aqbanking-wrapper",
+    "name": "juit/aqbanking-php",
     "type": "library",
-    "description": "Wrapper to use AqBanking CLI from PHP",
-    "license": "MIT",
+    "description": "A wrapper to use AqBanking CLI from a PHP context",
+    "license": "not yet defined",
     "authors": [
         {
             "name": "Jan Unger",
