@@ -15,7 +15,7 @@ class CheckAqBankingCommand extends AbstractCommand
 
     private function assertAqBankingResponds()
     {
-        $shellCommand = 'aqbanking-cli --help';
+        $shellCommand = $this->pathToAqBankingCLIBinary . ' --help';
         $result = $this->getShellCommandExecutor()->execute($shellCommand);
 
         if (0 !== $result->getReturnVar()) {
@@ -26,7 +26,7 @@ class CheckAqBankingCommand extends AbstractCommand
     private function assertAqBankingIsAppropriateVersion()
     {
         $minVersion = '5.0.24';
-        $shellCommand = 'aqbanking-config --vstring';
+        $shellCommand = $this->pathToAqBankingConfigBinary . ' --vstring';
         $result = $this->getShellCommandExecutor()->execute($shellCommand);
 
         if (0 !== $result->getReturnVar()) {

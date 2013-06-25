@@ -9,6 +9,19 @@ abstract class AbstractCommand
      */
     private $shellCommandExecutor = null;
 
+    /**
+     * @var string
+     */
+    protected $pathToAqBankingCLIBinary = 'aqbanking-cli';
+
+    /**
+     * @var string
+     */
+    protected $pathToAqBankingConfigBinary = 'aqbanking-config';
+
+    /**
+     * @param ShellCommandExecutor $shellCommandExecutor
+     */
     public function setShellCommandExecutor(ShellCommandExecutor $shellCommandExecutor)
     {
         $this->shellCommandExecutor = $shellCommandExecutor;
@@ -24,5 +37,21 @@ abstract class AbstractCommand
         }
 
         return $this->shellCommandExecutor;
+    }
+
+    /**
+     * @param string $binaryPath
+     */
+    public function setPathToAqBankingCLIBinary($binaryPath)
+    {
+        $this->pathToAqBankingCLIBinary = $binaryPath;
+    }
+
+    /**
+     * @param string $pathToAqBankingConfigBinary
+     */
+    public function setPathToAqBankingConfigBinary($pathToAqBankingConfigBinary)
+    {
+        $this->pathToAqBankingConfigBinary = $pathToAqBankingConfigBinary;
     }
 }

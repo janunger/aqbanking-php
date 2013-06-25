@@ -50,7 +50,7 @@ class RequestCommand extends AbstractCommand
     private function getShellCommand(\DateTime $fromDate = null)
     {
         $shellCommand =
-            "aqbanking-cli"
+            $this->pathToAqBankingCLIBinary
             . " --noninteractive"
             . " --acceptvalidcerts"
             . " --pinfile=" . $this->pathToPinList
