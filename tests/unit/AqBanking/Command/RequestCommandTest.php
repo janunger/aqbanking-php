@@ -3,6 +3,8 @@
 namespace AqBanking\Command;
 
 use AqBanking\Account;
+use AqBanking\BankCode;
+use AqBanking\Command\ShellCommandExecutor\Result;
 use AqBanking\ContextFile;
 
 class RequestCommandTest extends \PHPUnit_Framework_TestCase
@@ -15,7 +17,8 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
     public function testCanExecute()
     {
         $accountNumber = '12345678';
-        $bankCode = '23456789';
+        $bankCodeString = '23456789';
+        $bankCode = new BankCode($bankCodeString);
         $account = new Account($bankCode, $accountNumber);
 
         $pathToContextFile = '/path/to/context_file';
@@ -31,7 +34,7 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
             . " --acceptvalidcerts"
             . " --pinfile=" . $pathToPinList
             . " request"
-            . " --bank=" . $bankCode
+            . " --bank=" . $bankCodeString
             . " --account=" . $accountNumber
             . " --ctxfile=" . $pathToContextFile
             . " --transactions"
@@ -40,8 +43,8 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
             . " --dated";
         $shellCommandExecutorMock
             ->shouldReceive('execute')->once()
-            ->with($expectedCommand);
-        //->andReturn(new Result(array(), 0));
+            ->with($expectedCommand)
+            ->andReturn(new Result(array(), array(), 0));
 
         $sut = new RequestCommand($account, $contextFile, $pathToPinList);
         $sut->setShellCommandExecutor($shellCommandExecutorMock);
@@ -54,7 +57,8 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
     public function testCanExecuteWithFromDate()
     {
         $accountNumber = '12345678';
-        $bankCode = '23456789';
+        $bankCodeString = '23456789';
+        $bankCode = new BankCode($bankCodeString);
         $account = new Account($bankCode, $accountNumber);
 
         $pathToContextFile = '/path/to/context_file';
@@ -72,7 +76,7 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
             . " --acceptvalidcerts"
             . " --pinfile=" . $pathToPinList
             . " request"
-            . " --bank=" . $bankCode
+            . " --bank=" . $bankCodeString
             . " --account=" . $accountNumber
             . " --ctxfile=" . $pathToContextFile
             . " --transactions"
@@ -82,8 +86,8 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
             . " --fromdate=" . $fromDate->format('Ymd');
         $shellCommandExecutorMock
             ->shouldReceive('execute')->once()
-            ->with($expectedCommand);
-        //->andReturn(new Result(array(), 0));
+            ->with($expectedCommand)
+            ->andReturn(new Result(array(), array(), 0));
 
         $sut = new RequestCommand($account, $contextFile, $pathToPinList);
         $sut->setShellCommandExecutor($shellCommandExecutorMock);

@@ -55,7 +55,7 @@ class RequestCommand extends AbstractCommand
             . " --acceptvalidcerts"
             . " --pinfile=" . $this->pathToPinList
             . " request"
-            . " --bank=" . $this->account->getBankCode()
+            . " --bank=" . $this->account->getBankCode()->getString()
             . " --account=" . $this->account->getAccountNumber()
             . " --ctxfile=" . $this->contextFile->getPath()
             . " --transactions"

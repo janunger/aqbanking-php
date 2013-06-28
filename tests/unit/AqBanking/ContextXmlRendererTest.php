@@ -14,11 +14,11 @@ class ContextXmlRendererTest extends \PHPUnit_Framework_TestCase
 
         $sut = new ContextXmlRenderer($domDocument);
 
-        $localAccount = new Account('50951469', '12112345', 'Mustermann');
+        $localAccount = new Account(new BankCode('50951469'), '12112345', 'Mustermann');
         $expectedTransactions = array(
             new Transaction(
                 $localAccount,
-                new Account('MALADE51KOB', 'DE62570501200000012345', 'Sehr sehr langer Kontoinhab|ername'),
+                new Account(new BankCode('MALADE51KOB'), 'DE62570501200000012345', 'Sehr sehr langer Kontoinhab|ername'),
                 '5828201 01.06.2013',
                 new \DateTime('2013-06-03 12:00:00', new \DateTimeZone('UTC')),
                 new \DateTime('2013-06-03 12:00:00', new \DateTimeZone('UTC')),
@@ -26,7 +26,7 @@ class ContextXmlRendererTest extends \PHPUnit_Framework_TestCase
             ),
             new Transaction(
                 $localAccount,
-                new Account('50010060', '12777914', 'Energieversorger XY'),
+                new Account(new BankCode('50010060'), '12777914', 'Energieversorger XY'),
                 'KNR. 9540395 88.00/ABSCHLAG|VOM 03.06.2013 570125/MUST|ERSTR. 1, 12345 MUSTERSTADT',
                 new \DateTime('2013-06-04 12:00:00', new \DateTimeZone('UTC')),
                 new \DateTime('2013-06-04 12:00:00', new \DateTimeZone('UTC')),
@@ -34,7 +34,7 @@ class ContextXmlRendererTest extends \PHPUnit_Framework_TestCase
             ),
             new Transaction(
                 $localAccount,
-                new Account('50961592', '2531234', 'VEREIN XY'),
+                new Account(new BankCode('50961592'), '2531234', 'VEREIN XY'),
                 'MITGLIEDSBEITRAG 2013',
                 new \DateTime('2013-06-05 12:00:00', new \DateTimeZone('UTC')),
                 new \DateTime('2013-06-05 12:00:00', new \DateTimeZone('UTC')),
@@ -42,7 +42,7 @@ class ContextXmlRendererTest extends \PHPUnit_Framework_TestCase
             ),
             new Transaction(
                 $localAccount,
-                new Account('50070010', '175123456', 'PAYPAL'),
+                new Account(new BankCode('50070010'), '175123456', 'PAYPAL'),
                 'MHXA2O4A9O3HJ3PA PP*2240*PP|* VERKAEUFER X, IHR EINKAU|F BEI VERKAEUFER X, ARTIKEL|-125116343137|123456P3TX1234DT',
                 new \DateTime('2013-06-07 12:00:00', new \DateTimeZone('UTC')),
                 new \DateTime('2013-06-07 12:00:00', new \DateTimeZone('UTC')),

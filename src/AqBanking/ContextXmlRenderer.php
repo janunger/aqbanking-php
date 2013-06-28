@@ -56,8 +56,8 @@ class ContextXmlRenderer
             $value = $this->renderMoneyElement($this->xPath->query('value', $transactionNode)->item(0));
 
             $transactions[] = new Transaction(
-                new Account($localBankCode, $localAccountNumber, $localName),
-                new Account($remoteBankCode, $remoteAccountNumber, $remoteName),
+                new Account(new BankCode($localBankCode), $localAccountNumber, $localName),
+                new Account(new BankCode($remoteBankCode), $remoteAccountNumber, $remoteName),
                 $purpose,
                 $valutaDate,
                 $date,
