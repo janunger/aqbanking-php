@@ -7,13 +7,10 @@ use AqBanking\BankCode;
 use AqBanking\Command\ShellCommandExecutor\Result;
 use AqBanking\ContextFile;
 
-class RequestCommandTest extends \PHPUnit_Framework_TestCase
-{
-    protected function tearDown()
-    {
-        \Mockery::close();
-    }
+require_once 'ShellCommandTestCase.php';
 
+class RequestCommandTest extends ShellCommandTestCase
+{
     public function testCanExecute()
     {
         $accountNumber = '12345678';
@@ -26,7 +23,7 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
 
         $pathToPinList = '/path/to/pinlist';
 
-        $shellCommandExecutorMock = \Mockery::mock('AqBanking\Command\ShellCommandExecutor');
+        $shellCommandExecutorMock = $this->getShellCommandExecutorMock();
         // This is the actual test
         $expectedCommand =
             "aqbanking-cli"
@@ -68,7 +65,7 @@ class RequestCommandTest extends \PHPUnit_Framework_TestCase
 
         $fromDate = new \DateTime('yesterday');
 
-        $shellCommandExecutorMock = \Mockery::mock('AqBanking\Command\ShellCommandExecutor');
+        $shellCommandExecutorMock = $this->getShellCommandExecutorMock();
         // This is the actual test
         $expectedCommand =
             "aqbanking-cli"
