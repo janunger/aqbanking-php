@@ -18,6 +18,10 @@ class AddUserCommandTest extends ShellCommandTestCase
         $bankCodeString = '12345678';
         $hbciUrl = 'https://hbci.example.com';
 
+        $bankCode = new BankCode($bankCodeString);
+        $bank = new Bank($bankCode, $hbciUrl);
+        $user = new User($userId, $userName, $bank);
+
         $shellCommandExecutorMock = $this->getShellCommandExecutorMock();
 
         $expectedCommand =
@@ -38,7 +42,7 @@ class AddUserCommandTest extends ShellCommandTestCase
         $sut = new AddUserCommand();
         $sut->setShellCommandExecutor($shellCommandExecutorMock);
 
-        $sut->execute(new User($userId, $userName, new Bank(new BankCode($bankCodeString), $hbciUrl)));
+        $sut->execute($user);
 
         // To satisfy PHPUnit's "strict" mode - if Mockery didn't throw an exception until here, everything is fine
         $this->assertTrue(true);
