@@ -2,7 +2,7 @@
 
 namespace AqBanking\Command;
 
-use AqBanking\PinFile;
+use AqBanking\PinFile\PinFile;
 use AqBanking\User;
 
 class GetSysIDCommand extends AbstractCommand

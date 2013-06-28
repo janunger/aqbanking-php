@@ -5,7 +5,7 @@ namespace AqBanking\Command;
 use AqBanking\Bank;
 use AqBanking\BankCode;
 use AqBanking\Command\ShellCommandExecutor\Result;
-use AqBanking\PinFile;
+use AqBanking\PinFile\PinFile;
 use AqBanking\User;
 
 class GetSysIDCommandTest extends ShellCommandTestCase

@@ -1,6 +1,8 @@
 <?php
 
-namespace AqBanking;
+namespace AqBanking\PinFile;
+
+use AqBanking\User;
 
 class PinFile
 {
