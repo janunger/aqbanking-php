@@ -52,4 +52,52 @@ class Transaction
         $this->value = $value;
         $this->valutaDate = $valutaDate;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @return \AqBanking\Account
+     */
+    public function getLocalAccount()
+    {
+        return $this->localAccount;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPurpose()
+    {
+        return $this->purpose;
+    }
+
+    /**
+     * @return \AqBanking\Account
+     */
+    public function getRemoteAccount()
+    {
+        return $this->remoteAccount;
+    }
+
+    /**
+     * @return \Money\Money
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getValutaDate()
+    {
+        return $this->valutaDate;
+    }
 }

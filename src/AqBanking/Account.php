@@ -47,4 +47,12 @@ class Account
     {
         return $this->accountNumber;
     }
+
+    /**
+     * @return string
+     */
+    public function getAccountHolderName()
+    {
+        return $this->accountHolderName;
+    }
 }
