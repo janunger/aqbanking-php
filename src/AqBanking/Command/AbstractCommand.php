@@ -20,6 +20,11 @@ abstract class AbstractCommand
     protected $pathToAqBankingConfigBinary = 'aqbanking-config';
 
     /**
+     * @var string
+     */
+    protected $pathToAqHBCIToolBinary = 'aqhbci-tool4';
+
+    /**
      * @param ShellCommandExecutor $shellCommandExecutor
      */
     public function setShellCommandExecutor(ShellCommandExecutor $shellCommandExecutor)
@@ -53,5 +58,13 @@ abstract class AbstractCommand
     public function setPathToAqBankingConfigBinary($pathToAqBankingConfigBinary)
     {
         $this->pathToAqBankingConfigBinary = $pathToAqBankingConfigBinary;
+    }
+
+    /**
+     * @param string $pathToAqHBCIToolBinary
+     */
+    public function setPathToAqHBCIToolBinary($pathToAqHBCIToolBinary)
+    {
+        $this->pathToAqHBCIToolBinary = $pathToAqHBCIToolBinary;
     }
 }
