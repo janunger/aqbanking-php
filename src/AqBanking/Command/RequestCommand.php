@@ -53,11 +53,11 @@ class RequestCommand extends AbstractCommand
             $this->pathToAqBankingCLIBinary
             . " --noninteractive"
             . " --acceptvalidcerts"
-            . " --pinfile=" . $this->pathToPinList
+            . " --pinfile=" . escapeshellcmd($this->pathToPinList)
             . " request"
-            . " --bank=" . $this->account->getBankCode()->getString()
-            . " --account=" . $this->account->getAccountNumber()
-            . " --ctxfile=" . $this->contextFile->getPath()
+            . " --bank=" . escapeshellcmd($this->account->getBankCode()->getString())
+            . " --account=" . escapeshellcmd($this->account->getAccountNumber())
+            . " --ctxfile=" . escapeshellcmd($this->contextFile->getPath())
             . " --transactions"
             . " --balance"
             . " --sto"     // standing orders

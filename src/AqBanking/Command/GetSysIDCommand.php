@@ -11,17 +11,16 @@ class GetSysIDCommand extends AbstractCommand
     {
         $shellCommand =
             $this->pathToAqHBCIToolBinary
-            . ' --pinfile=' . $pinFile->getPath()
+            . ' --pinfile=' . escapeshellcmd($pinFile->getPath())
             . ' --noninteractive'
             . ' --acceptvalidcerts'
             . ' getsysid'
-            . ' --bank=' . $user->getBank()->getBankCode()->getString()
-            . ' --user=' . $user->getUserId()
+            . ' --bank=' . escapeshellcmd($user->getBank()->getBankCode()->getString())
+            . ' --user=' . escapeshellcmd($user->getUserId())
         ;
 
         $result = $this->getShellCommandExecutor()->execute($shellCommand);
 
-        // TODO: Error handling
         if (0 !== $result->getReturnVar()) {
             throw new \RuntimeException(implode(PHP_EOL, $result->getErrors()));
         }
