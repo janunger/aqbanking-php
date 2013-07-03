@@ -9,17 +9,26 @@ use Assert\Assertion;
 class PinFileCreator
 {
     /**
-     * @param string $pinFileDir
+     * @var string
+     */
+    private $pinFileDir;
+
+    public function __construct($pinFileDir)
+    {
+        $this->pinFileDir = $pinFileDir;
+    }
+
+    /**
      * @param string $pin
      * @param User $user
      * @return PinFile
      */
-    public function createFile($pinFileDir, $pin, User $user)
+    public function createFile($pin, User $user)
     {
-        Assertion::directory($pinFileDir);
-        Assertion::writeable($pinFileDir);
+        Assertion::directory($this->pinFileDir);
+        Assertion::writeable($this->pinFileDir);
 
-        $pinFile = new PinFile($pinFileDir, $user);
+        $pinFile = new PinFile($this->pinFileDir, $user);
         $bankCodeString = $user->getBank()->getBankCode()->getString();
         $userId = $user->getUserId();
 

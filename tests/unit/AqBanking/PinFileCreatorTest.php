@@ -20,11 +20,11 @@ class PinFileCreatorTest extends \PHPUnit_Framework_TestCase
 
         $expectedFileName = 'pinfile_' . $bankCodeString . '_' . $userId;
 
-        $sut = new PinFileCreator();
+        $sut = new PinFileCreator($pinFileDirMock);
 
         $this->assertFalse($vfsRoot->hasChild($expectedFileName));
 
-        $pinFile = $sut->createFile($pinFileDirMock, $pin, $user);
+        $pinFile = $sut->createFile($pin, $user);
 
         $this->assertTrue($vfsRoot->hasChild($expectedFileName));
         $this->assertEquals($expectedFileName, $pinFile->getFileName());
