@@ -80,4 +80,37 @@ class AddUserCommandTest extends ShellCommandTestCase
 
         $sut->execute(new User($userId, $userName, new Bank(new BankCode($bankCodeString), $hbciUrl)));
     }
+
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function testThrowsExceptionOnUnexpectedResult()
+    {
+        $userId = 'mustermann';
+        $userName = 'Max Mustermann';
+        $bankCodeString = '12345678';
+        $hbciUrl = 'https://hbci.example.com';
+
+        $shellCommandExecutorMock = $this->getShellCommandExecutorMock();
+
+        $expectedCommand =
+            'aqhbci-tool4'
+            . ' adduser'
+            . ' --username="' . $userName . '"'
+            . ' --bank=' . $bankCodeString
+            . ' --user=' . $userId
+            . ' --tokentype=pintan'
+            . ' --server=' . $hbciUrl
+        ;
+
+        $shellCommandExecutorMock
+            ->shouldReceive('execute')->once()
+            ->with($expectedCommand)
+            ->andReturn(new Result(array(), array(), 127));
+
+        $sut = new AddUserCommand();
+        $sut->setShellCommandExecutor($shellCommandExecutorMock);
+
+        $sut->execute(new User($userId, $userName, new Bank(new BankCode($bankCodeString), $hbciUrl)));
+    }
 }

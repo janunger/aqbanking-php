@@ -11,6 +11,7 @@ class AddUserCommand extends AbstractCommand
 
     /**
      * @param User $user
+     * @throws \RuntimeException
      * @throws AddUserCommand\UserAlreadyExistsException
      */
     public function execute(User $user)
@@ -28,6 +29,9 @@ class AddUserCommand extends AbstractCommand
 
         if (self::RETURN_VAR_USER_ALREADY_EXISTS === $result->getReturnVar()) {
             throw new UserAlreadyExistsException(implode(PHP_EOL, $result->getErrors()));
+        }
+        if (0 !== $result->getReturnVar()) {
+            throw new \RuntimeException(implode(PHP_EOL, $result->getErrors()));
         }
     }
 }
