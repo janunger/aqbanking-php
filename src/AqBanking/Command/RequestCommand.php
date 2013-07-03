@@ -4,6 +4,7 @@ namespace AqBanking\Command;
 
 use AqBanking\Account;
 use AqBanking\ContextFile;
+use AqBanking\PinFile\PinFile;
 
 class RequestCommand extends AbstractCommand
 {
@@ -18,20 +19,20 @@ class RequestCommand extends AbstractCommand
     private $contextFile;
 
     /**
-     * @var string
+     * @var PinFile
      */
-    private $pathToPinList;
+    private $pinFile;
 
     /**
      * @param Account $account
      * @param ContextFile $contextFile
-     * @param string $pathToPinList
+     * @param PinFile $pinFile
      */
-    public function __construct(Account $account, ContextFile $contextFile, $pathToPinList)
+    public function __construct(Account $account, ContextFile $contextFile, PinFile $pinFile)
     {
         $this->account = $account;
         $this->contextFile = $contextFile;
-        $this->pathToPinList = $pathToPinList;
+        $this->pinFile = $pinFile;
     }
 
     /**
@@ -53,7 +54,7 @@ class RequestCommand extends AbstractCommand
             $this->pathToAqBankingCLIBinary
             . " --noninteractive"
             . " --acceptvalidcerts"
-            . " --pinfile=" . escapeshellcmd($this->pathToPinList)
+            . " --pinfile=" . escapeshellcmd($this->pinFile->getPath())
             . " request"
             . " --bank=" . escapeshellcmd($this->account->getBankCode()->getString())
             . " --account=" . escapeshellcmd($this->account->getAccountNumber())

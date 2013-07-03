@@ -6,6 +6,8 @@ use AqBanking\Account;
 use AqBanking\BankCode;
 use AqBanking\Command\ShellCommandExecutor\Result;
 use AqBanking\ContextFile;
+use AqBanking\PinFile\PinFile;
+use AqBanking\User;
 
 require_once 'ShellCommandTestCase.php';
 
@@ -21,7 +23,8 @@ class RequestCommandTest extends ShellCommandTestCase
         $pathToContextFile = '/path/to/context_file';
         $contextFile = new ContextFile($pathToContextFile);
 
-        $pathToPinList = '/path/to/pinlist';
+        $pathToPinFile = '/path/to/pinfile';
+        $pinFileMock = $this->getPinFileMock($pathToPinFile);
 
         $shellCommandExecutorMock = $this->getShellCommandExecutorMock();
         // This is the actual test
@@ -29,7 +32,7 @@ class RequestCommandTest extends ShellCommandTestCase
             "aqbanking-cli"
             . " --noninteractive"
             . " --acceptvalidcerts"
-            . " --pinfile=" . $pathToPinList
+            . " --pinfile=" . $pathToPinFile
             . " request"
             . " --bank=" . $bankCodeString
             . " --account=" . $accountNumber
@@ -43,7 +46,7 @@ class RequestCommandTest extends ShellCommandTestCase
             ->with($expectedCommand)
             ->andReturn(new Result(array(), array(), 0));
 
-        $sut = new RequestCommand($account, $contextFile, $pathToPinList);
+        $sut = new RequestCommand($account, $contextFile, $pinFileMock);
         $sut->setShellCommandExecutor($shellCommandExecutorMock);
         $sut->execute();
 
@@ -61,7 +64,8 @@ class RequestCommandTest extends ShellCommandTestCase
         $pathToContextFile = '/path/to/context_file';
         $contextFile = new ContextFile($pathToContextFile);
 
-        $pathToPinList = '/path/to/pinlist';
+        $pathToPinFile = '/path/to/pinfile';
+        $pinFileMock = $this->getPinFileMock($pathToPinFile);
 
         $fromDate = new \DateTime('yesterday');
 
@@ -71,7 +75,7 @@ class RequestCommandTest extends ShellCommandTestCase
             "aqbanking-cli"
             . " --noninteractive"
             . " --acceptvalidcerts"
-            . " --pinfile=" . $pathToPinList
+            . " --pinfile=" . $pathToPinFile
             . " request"
             . " --bank=" . $bankCodeString
             . " --account=" . $accountNumber
@@ -86,11 +90,25 @@ class RequestCommandTest extends ShellCommandTestCase
             ->with($expectedCommand)
             ->andReturn(new Result(array(), array(), 0));
 
-        $sut = new RequestCommand($account, $contextFile, $pathToPinList);
+        $sut = new RequestCommand($account, $contextFile, $pinFileMock);
         $sut->setShellCommandExecutor($shellCommandExecutorMock);
         $sut->execute($fromDate);
 
         // To satisfy PHPUnit's "strict" mode - if Mockery didn't throw an exception until here, everything is fine
         $this->assertTrue(true);
+    }
+
+    /**
+     * @param string $pathToPinFile
+     * @return \Mockery\MockInterface
+     */
+    private function getPinFileMock($pathToPinFile)
+    {
+        $pinFileMock = \Mockery::mock('AqBanking\PinFile\PinFile');
+        $pinFileMock
+            ->shouldReceive('getPath')
+            ->andReturn($pathToPinFile);
+
+        return $pinFileMock;
     }
 }
