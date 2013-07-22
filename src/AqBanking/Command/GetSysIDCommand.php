@@ -2,6 +2,8 @@
 
 namespace AqBanking\Command;
 
+use AqBanking\Command\ShellCommandExecutor\DefectiveResultException;
+use AqBanking\Command\ShellCommandExecutor\ResultAnalyzer;
 use AqBanking\PinFile\PinFile;
 use AqBanking\User;
 
@@ -21,8 +23,9 @@ class GetSysIDCommand extends AbstractCommand
 
         $result = $this->getShellCommandExecutor()->execute($shellCommand);
 
-        if (0 !== $result->getReturnVar()) {
-            throw new \RuntimeException(implode(PHP_EOL, $result->getErrors()));
+        $resultAnalyzer = new ResultAnalyzer();
+        if ($resultAnalyzer->isDefectiveResult($result)) {
+            throw new DefectiveResultException('', 0, null, $result, $shellCommand);
         }
     }
 }

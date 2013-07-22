@@ -48,7 +48,7 @@ class GetSysIDCommandTest extends ShellCommandTestCase
     }
 
     /**
-     * @expectedException \RuntimeException
+     * @expectedException \AqBanking\Command\ShellCommandExecutor\DefectiveResultException
      */
     public function testThrowsExceptionOnUnexpectedResult()
     {
