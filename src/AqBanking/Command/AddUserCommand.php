@@ -3,6 +3,8 @@
 namespace AqBanking\Command;
 
 use AqBanking\Command\AddUserCommand\UserAlreadyExistsException;
+use AqBanking\Command\ShellCommandExecutor\DefectiveResultException;
+use AqBanking\Command\ShellCommandExecutor\ResultAnalyzer;
 use AqBanking\User;
 
 class AddUserCommand extends AbstractCommand
@@ -30,8 +32,10 @@ class AddUserCommand extends AbstractCommand
         if (self::RETURN_VAR_USER_ALREADY_EXISTS === $result->getReturnVar()) {
             throw new UserAlreadyExistsException(implode(PHP_EOL, $result->getErrors()));
         }
-        if (0 !== $result->getReturnVar()) {
-            throw new \RuntimeException(implode(PHP_EOL, $result->getErrors()));
+
+        $resultAnalyzer = new ResultAnalyzer();
+        if ($resultAnalyzer->isDefectiveResult($result)) {
+            throw new DefectiveResultException('', 0, null, $result, $shellCommand);
         }
     }
 }
