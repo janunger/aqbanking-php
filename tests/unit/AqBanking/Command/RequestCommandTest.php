@@ -99,6 +99,32 @@ class RequestCommandTest extends ShellCommandTestCase
     }
 
     /**
+     * @expectedException \AqBanking\Command\ShellCommandExecutor\DefectiveResultException
+     */
+    public function testThrowsExceptionOnUnexpectedResult()
+    {
+        $accountNumber = '12345678';
+        $bankCodeString = '23456789';
+        $bankCode = new BankCode($bankCodeString);
+        $account = new Account($bankCode, $accountNumber);
+
+        $pathToContextFile = '/path/to/context_file';
+        $contextFile = new ContextFile($pathToContextFile);
+
+        $pathToPinFile = '/path/to/pinfile';
+        $pinFileMock = $this->getPinFileMock($pathToPinFile);
+
+        $shellCommandExecutorMock = $this->getShellCommandExecutorMock();
+        $shellCommandExecutorMock
+            ->shouldReceive('execute')->once()
+            ->andReturn(new Result(array(), array('some unexpected output'), 0));
+
+        $sut = new RequestCommand($account, $contextFile, $pinFileMock);
+        $sut->setShellCommandExecutor($shellCommandExecutorMock);
+        $sut->execute();
+    }
+
+    /**
      * @param string $pathToPinFile
      * @return \Mockery\MockInterface
      */
