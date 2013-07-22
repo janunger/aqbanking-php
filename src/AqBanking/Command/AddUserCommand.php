@@ -13,8 +13,8 @@ class AddUserCommand extends AbstractCommand
 
     /**
      * @param User $user
-     * @throws \RuntimeException
      * @throws AddUserCommand\UserAlreadyExistsException
+     * @throws ShellCommandExecutor\DefectiveResultException
      */
     public function execute(User $user)
     {
@@ -35,7 +35,7 @@ class AddUserCommand extends AbstractCommand
 
         $resultAnalyzer = new ResultAnalyzer();
         if ($resultAnalyzer->isDefectiveResult($result)) {
-            throw new DefectiveResultException('', 0, null, $result, $shellCommand);
+            throw new DefectiveResultException('Unexpected output on adding a user', 0, null, $result, $shellCommand);
         }
     }
 }

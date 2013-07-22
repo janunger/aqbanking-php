@@ -49,7 +49,13 @@ class RequestCommand extends AbstractCommand
 
         $resultAnalyzer = new ResultAnalyzer();
         if ($resultAnalyzer->isDefectiveResult($result)) {
-            throw new DefectiveResultException('', 0, null, $result, $shellCommand);
+            throw new DefectiveResultException(
+                'Unexpected output on polling transactions',
+                0,
+                null,
+                $result,
+                $shellCommand
+            );
         }
     }
 

@@ -9,6 +9,11 @@ use AqBanking\User;
 
 class GetSysIDCommand extends AbstractCommand
 {
+    /**
+     * @param User $user
+     * @param PinFile $pinFile
+     * @throws ShellCommandExecutor\DefectiveResultException
+     */
     public function execute(User $user, PinFile $pinFile)
     {
         $shellCommand =
@@ -25,7 +30,13 @@ class GetSysIDCommand extends AbstractCommand
 
         $resultAnalyzer = new ResultAnalyzer();
         if ($resultAnalyzer->isDefectiveResult($result)) {
-            throw new DefectiveResultException('', 0, null, $result, $shellCommand);
+            throw new DefectiveResultException(
+                'Unexpected output on getting user\'s accounts',
+                0,
+                null,
+                $result,
+                $shellCommand
+            );
         }
     }
 }
