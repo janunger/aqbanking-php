@@ -3,6 +3,9 @@
 namespace AqBanking\Command;
 
 use AqBanking\Account;
+use AqBanking\Command\ShellCommandExecutor\DefectiveResultException;
+use AqBanking\Command\ShellCommandExecutor\Result;
+use AqBanking\Command\ShellCommandExecutor\ResultAnalyzer;
 use AqBanking\ContextFile;
 use AqBanking\PinFile\PinFile;
 
@@ -37,11 +40,17 @@ class RequestCommand extends AbstractCommand
 
     /**
      * @param \DateTime $fromDate
+     * @throws ShellCommandExecutor\DefectiveResultException
      */
     public function execute(\DateTime $fromDate = null)
     {
         $shellCommand = $this->getShellCommand($fromDate);
-        $this->getShellCommandExecutor()->execute($shellCommand);
+        $result = $this->getShellCommandExecutor()->execute($shellCommand);
+
+        $resultAnalyzer = new ResultAnalyzer();
+        if ($resultAnalyzer->isDefectiveResult($result)) {
+            throw new DefectiveResultException('', 0, null, $result, $shellCommand);
+        }
     }
 
     /**
