@@ -6,7 +6,10 @@ class ResultAnalyzer
 {
     private $expectedOutputRegexes = array(
         '/Aufträge werden ausgeführt: Started\./',
-        '/Automatically accepting valid new certificate/'
+        '/Automatically accepting valid new certificate/',
+        '/Unexpected tag/',
+        '/To debug set environment variable/',
+        '/Your bank does not send an opening saldo/'
     );
 
     /**
