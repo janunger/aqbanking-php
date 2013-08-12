@@ -49,7 +49,7 @@ class SetAppropriateITanModeCommand extends AbstractCommand
                 $shellCommand
             );
         }
-        if ($requiredHbciVersion->isHigherThan($highestVersionAvailable)) {
+        if ($requiredHbciVersion && $requiredHbciVersion->isHigherThan($highestVersionAvailable)) {
             throw new DefectiveResultException(
                 'AqBanking could not find an available HBCI version that is high enough',
                 0,
