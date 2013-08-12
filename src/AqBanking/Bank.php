@@ -15,13 +15,20 @@ class Bank
     private $hbciUrl;
 
     /**
+     * @var HbciVersion|null
+     */
+    private $hbciVersion;
+
+    /**
      * @param BankCode $bankCode
      * @param string $hbciUrl
+     * @param HbciVersion|null $hbciVersion
      */
-    public function __construct(BankCode $bankCode, $hbciUrl)
+    public function __construct(BankCode $bankCode, $hbciUrl, HbciVersion $hbciVersion = null)
     {
         $this->bankCode = $bankCode;
         $this->hbciUrl = $hbciUrl;
+        $this->hbciVersion = $hbciVersion;
     }
 
     /**
@@ -38,5 +45,13 @@ class Bank
     public function getHbciUrl()
     {
         return $this->hbciUrl;
+    }
+
+    /**
+     * @return HbciVersion|null
+     */
+    public function getHbciVersion()
+    {
+        return $this->hbciVersion;
     }
 }
