@@ -24,4 +24,13 @@ class BankCode
     {
         return $this->bankCode;
     }
+
+    /**
+     * @param BankCode $bankCode
+     * @return bool
+     */
+    public function equals(BankCode $bankCode)
+    {
+        return $bankCode->bankCode === $this->bankCode;
+    }
 }
