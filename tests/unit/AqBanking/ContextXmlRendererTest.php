@@ -6,7 +6,10 @@ use Money\Money;
 
 class ContextXmlRendererTest extends \PHPUnit_Framework_TestCase
 {
-    public function testCanRenderTransactions()
+    /**
+     * @test
+     */
+    public function can_render_transactions()
     {
         $fixture = file_get_contents(__DIR__ . '/fixtures/test_context_file_rendered.xml');
         $domDocument = new \DOMDocument();
@@ -51,5 +54,50 @@ class ContextXmlRendererTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertEquals($expectedTransactions, $sut->getTransactions());
+    }
+
+    /**
+     * @test
+     */
+    public function throws_exception_if_data_contains_reserved_char()
+    {
+        $fixture = file_get_contents(__DIR__ . '/fixtures/test_context_file_rendered_with_reserved_char.xml');
+        $domDocument = new \DOMDocument();
+        $domDocument->loadXML($fixture);
+
+        $sut = new ContextXmlRenderer($domDocument);
+
+        $this->setExpectedException('\RuntimeException');
+        $sut->getTransactions();
+    }
+
+    /**
+     * @test
+     */
+    public function throws_exception_if_date_is_not_flagged_as_utc()
+    {
+        $fixture = file_get_contents(__DIR__ . '/fixtures/test_context_file_rendered_with_wrong_utc_flag.xml');
+        $domDocument = new \DOMDocument();
+        $domDocument->loadXML($fixture);
+
+        $sut = new ContextXmlRenderer($domDocument);
+
+        $this->setExpectedException('\RuntimeException');
+        $sut->getTransactions();
+    }
+
+    /**
+     * @test
+     */
+    public function throws_exception_if_amount_is_malformed()
+    {
+        $fixture = file_get_contents(__DIR__ . '/fixtures/test_context_file_rendered_with_malformed_amount.xml');
+        $domDocument = new \DOMDocument();
+        $domDocument->loadXML($fixture);
+
+        $sut = new ContextXmlRenderer($domDocument);
+
+        $this->setExpectedException('\RuntimeException');
+        $sut->getTransactions();
     }
 }
