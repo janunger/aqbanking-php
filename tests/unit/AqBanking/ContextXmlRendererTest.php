@@ -97,7 +97,7 @@ class ContextXmlRendererTest extends \PHPUnit_Framework_TestCase
 
         $sut = new ContextXmlRenderer($domDocument);
 
-        $this->setExpectedException('\RuntimeException');
+        $this->setExpectedException('\AqBanking\RuntimeException');
         $sut->getTransactions();
     }
 }

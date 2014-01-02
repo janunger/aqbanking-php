@@ -2,6 +2,7 @@
 
 namespace AqBanking;
 
+use AqBanking\ContentXmlRenderer\MoneyElementRenderer;
 use Money\Currency;
 use Money\Money;
 
@@ -17,10 +18,16 @@ class ContextXmlRenderer
      */
     private $xPath;
 
+    /**
+     * @var MoneyElementRenderer
+     */
+    private $moneyElementRenderer;
+
     public function __construct(\DOMDocument $domDocument)
     {
         $this->domDocument = $domDocument;
         $this->xPath = new \DOMXPath($domDocument);
+        $this->moneyElementRenderer = new MoneyElementRenderer();
     }
 
     /**
@@ -131,15 +138,9 @@ class ContextXmlRenderer
     private function renderMoneyElement(\DOMNode $node)
     {
         $valueString = $this->renderSimpleTextElement($this->xPath->query('value/value', $node));
-        $matches = array();
-        if (!preg_match('/^(?P<amount>(-){0,1}\d+)\/100$/', $valueString, $matches)) {
-            throw new \RuntimeException('Unexpected input');
-        }
-        $amount = (int)$matches['amount'];
+        $currencyString = $this->renderSimpleTextElement($this->xPath->query('currency/value', $node));
 
-        $currency = $this->renderSimpleTextElement($this->xPath->query('currency/value', $node));
-
-        return new Money($amount, new Currency($currency));
+        return $this->moneyElementRenderer->render($valueString, $currencyString);
     }
 
     /**
