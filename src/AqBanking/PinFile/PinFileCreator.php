@@ -2,9 +2,7 @@
 
 namespace AqBanking\PinFile;
 
-use AqBanking\PinFile\PinFile;
 use AqBanking\User;
-use Assert\Assertion;
 
 class PinFileCreator
 {
@@ -25,25 +23,51 @@ class PinFileCreator
      */
     public function createFile($pin, User $user)
     {
-        Assertion::directory($this->pinFileDir);
-        Assertion::writeable($this->pinFileDir);
+        $pinFileDir = $this->pinFileDir;
 
-        $pinFile = new PinFile($this->pinFileDir, $user);
-        $bankCodeString = $user->getBank()->getBankCode()->getString();
-        $userId = $user->getUserId();
+        $this->assertIsWritableDir($pinFileDir);
 
-        // The comments and line breaks seem to be mandatory for AqBanking to parse the file
-        $fileContent =
-            '# This is a PIN file to be used with AqBanking' . PHP_EOL
-            . '# Please insert the PINs/passwords for the users below' . PHP_EOL
-            . PHP_EOL
-            . '# User "' . $userId . '" at "' . $bankCodeString . '"' . PHP_EOL
-            . 'PIN_' . $bankCodeString . '_' . $userId . ' = "' . $pin . '"' . PHP_EOL
-        ;
+        $pinFile = new PinFile($pinFileDir, $user);
         $filePath = $pinFile->getPath();
+        $fileContent = $this->createFileContent(
+            $pin,
+            $user->getUserId(),
+            $user->getBank()->getBankCode()->getString()
+        );
 
         file_put_contents($filePath, $fileContent);
 
         return $pinFile;
+    }
+
+    /**
+     * @param string $pinFileDir
+     * @throws \InvalidArgumentException
+     */
+    private function assertIsWritableDir($pinFileDir)
+    {
+        if (!is_dir($pinFileDir)) {
+            throw new \InvalidArgumentException("PIN file dir '$pinFileDir' is not a directory");
+        }
+        if (!is_writable($pinFileDir)) {
+            throw new \InvalidArgumentException("PIN file dir '$pinFileDir' is not writable");
+        }
+    }
+
+    /**
+     * @param string $pin
+     * @param string $userId
+     * @param string $bankCodeString
+     * @return string
+     */
+    private function createFileContent($pin, $userId, $bankCodeString)
+    {
+        // The comments and line breaks seem to be mandatory for AqBanking to parse the file
+        return
+            '# This is a PIN file to be used with AqBanking' . PHP_EOL
+            . '# Please insert the PINs/passwords for the users below' . PHP_EOL
+            . PHP_EOL
+            . '# User "' . $userId . '" at "' . $bankCodeString . '"' . PHP_EOL
+            . 'PIN_' . $bankCodeString . '_' . $userId . ' = "' . $pin . '"' . PHP_EOL;
     }
 }

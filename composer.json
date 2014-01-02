@@ -13,7 +13,6 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "beberlei/assert": "v1.3",
         "mathiasverraes/money": "1.2.0"
     },
     "require-dev": {
