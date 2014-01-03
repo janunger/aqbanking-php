@@ -6,3 +6,5 @@ php:
 
 before_script:
     - composer --dev install
+
+script: vendor/bin/phpunit -c tests/phpunit.xml.dist tests
