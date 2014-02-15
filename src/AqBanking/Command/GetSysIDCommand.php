@@ -4,7 +4,7 @@ namespace AqBanking\Command;
 
 use AqBanking\Command\ShellCommandExecutor\DefectiveResultException;
 use AqBanking\Command\ShellCommandExecutor\ResultAnalyzer;
-use AqBanking\PinFile\PinFile;
+use AqBanking\PinFile\PinFileInterface as PinFile;
 use AqBanking\User;
 
 class GetSysIDCommand extends AbstractCommand

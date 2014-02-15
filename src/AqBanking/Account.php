@@ -2,7 +2,7 @@
 
 namespace AqBanking;
 
-class Account
+class Account implements AccountInterface
 {
     /**
      * @var BankCode

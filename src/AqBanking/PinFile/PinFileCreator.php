@@ -19,7 +19,7 @@ class PinFileCreator
     /**
      * @param string $pin
      * @param User $user
-     * @return PinFile
+     * @return PinFileInterface
      */
     public function createFile($pin, User $user)
     {

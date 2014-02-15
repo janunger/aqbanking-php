@@ -4,7 +4,7 @@ namespace AqBanking\PinFile;
 
 use AqBanking\User;
 
-class PinFile
+class PinFile implements PinFileInterface
 {
     /**
      * @var string

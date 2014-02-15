@@ -2,12 +2,11 @@
 
 namespace AqBanking\Command;
 
-use AqBanking\Account;
+use AqBanking\AccountInterface as Account;
 use AqBanking\Command\ShellCommandExecutor\DefectiveResultException;
-use AqBanking\Command\ShellCommandExecutor\Result;
 use AqBanking\Command\ShellCommandExecutor\ResultAnalyzer;
 use AqBanking\ContextFile;
-use AqBanking\PinFile\PinFile;
+use AqBanking\PinFile\PinFileInterface as PinFile;
 
 class RequestCommand extends AbstractCommand
 {
