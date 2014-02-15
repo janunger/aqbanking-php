@@ -11,7 +11,9 @@ class ResultAnalyzer
         '/Unexpected tag/',
         '/To debug set environment variable/',
         '/Your bank does not send an opening saldo/',
-        '/Bank data for KtoBlzCheck not found/'
+        '/Bank data for KtoBlzCheck not found/',
+        '/Executing Jobs: Started\./',
+        '/A TLS packet with unexpected length was received\./'
     );
 
     /**
