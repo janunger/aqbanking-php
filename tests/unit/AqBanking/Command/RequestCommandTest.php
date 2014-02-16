@@ -38,9 +38,7 @@ class RequestCommandTest extends ShellCommandTestCase
             . " --account=" . $accountNumber
             . " --ctxfile=" . $pathToContextFile
             . " --transactions"
-            . " --balance"
-            . " --sto"
-            . " --dated";
+            . " --balance";
         $shellCommandExecutorMock
             ->shouldReceive('execute')->once()
             ->with($expectedCommand)
@@ -82,8 +80,6 @@ class RequestCommandTest extends ShellCommandTestCase
             . " --ctxfile=" . $pathToContextFile
             . " --transactions"
             . " --balance"
-            . " --sto"
-            . " --dated"
             . " --fromdate=" . $fromDate->format('Ymd');
         $shellCommandExecutorMock
             ->shouldReceive('execute')->once()
