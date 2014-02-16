@@ -76,6 +76,18 @@ class ContextXmlRenderer
     }
 
     /**
+     * @return Money
+     */
+    public function getBalance()
+    {
+        $statusNode = $this->domDocument->getElementsByTagName('bookedBalance')->item(0);
+
+        return $this->renderMoneyElement(
+            $this->xPath->query('value', $statusNode)->item(0)
+        );
+    }
+
+    /**
      * @param \DOMNodeList $nodes
      * @throws \RuntimeException
      * @return string
