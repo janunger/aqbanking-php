@@ -75,8 +75,9 @@ class RequestCommand extends AbstractCommand
             . " --ctxfile=" . escapeshellcmd($this->contextFile->getPath())
             . " --transactions"
             . " --balance"
-            . " --sto"     // standing orders
-            . " --dated"   // dated transfers
+            // TODO: Standing orders and dated transfers are not supported by some account types
+            //. " --sto"     // standing orders
+            //. " --dated"   // dated transfers
         ;
 
         if (null !== $fromDate) {
