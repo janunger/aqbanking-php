@@ -13,7 +13,8 @@ class ResultAnalyzer
         '/Your bank does not send an opening saldo/',
         '/Bank data for KtoBlzCheck not found/',
         '/Executing Jobs: Started\./',
-        '/A TLS packet with unexpected length was received\./'
+        '/A TLS packet with unexpected length was received\./',
+        '/===== Executing Jobs =====/',
     );
 
     /**
