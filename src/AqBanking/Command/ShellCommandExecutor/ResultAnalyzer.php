@@ -8,6 +8,7 @@ class ResultAnalyzer
         '/Aufträge werden ausgeführt: Started\./',
         '/Automatically accepting valid new certificate/',
         '/Automatically accepting certificate/',
+        '/The TLS connection was non-properly terminated./', // it usually automatically restarts, so no error
         '/Unexpected tag/',
         '/To debug set environment variable/',
         '/Your bank does not send an opening saldo/',
