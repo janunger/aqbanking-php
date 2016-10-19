@@ -8,6 +8,7 @@ class ShellCommandExecutor
 {
     public function execute($shellCommand)
     {
+        $shellCommand = "LANG=C " . $shellCommand;
         $output = array();
         $returnVar = null;
         $tempFile = tempnam(sys_get_temp_dir(), 'aqb-');

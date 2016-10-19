@@ -5,7 +5,6 @@ namespace AqBanking\Command\ShellCommandExecutor;
 class ResultAnalyzer
 {
     private $expectedOutputRegexes = array(
-        '/Aufträge werden ausgeführt: Started\./',
         '/Automatically accepting valid new certificate/',
         '/Automatically accepting certificate/',
         '/The TLS connection was non-properly terminated./', // it usually automatically restarts, so no error
