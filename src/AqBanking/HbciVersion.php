@@ -44,4 +44,12 @@ class HbciVersion
     {
         return $this->methodCode;
     }
+
+    /**
+     * @return string
+     */
+    public function getVersionNumber()
+    {
+        return $this->versionNumber;
+    }
 }
