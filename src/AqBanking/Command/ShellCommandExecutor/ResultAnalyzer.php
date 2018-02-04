@@ -14,6 +14,7 @@ class ResultAnalyzer
         '/Bank data for KtoBlzCheck not found/',
         '/Executing Jobs: Started\./',
         '/A TLS packet with unexpected length was received\./',
+        '/Bad IBAN \(country code not in upper case\)/',       
         '/===== Executing Jobs =====/',
     );
 
