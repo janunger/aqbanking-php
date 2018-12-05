@@ -1,3 +1,8 @@
+This package is not maintained anymore.
+=======================================
+
+Please use [mestrona/aqbanking-php](https://packagist.org/packages/mestrona/aqbanking-php) instead.
+
 AqBankingPhp
 ============
 
